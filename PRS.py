@@ -9,33 +9,33 @@ def get_computer_selection():
     return selection
 
 
-def determins_winner(user_action, computer_action):
+def determins_winner(user_action:str, computer_action:str)->None:
     if user_action == computer_action:
-        print(f'Оба пользователя выбрали {user_action.name}. Ничья!!')
+        print(f'Both users chose {user_action}. Tie!!')
     elif user_action == "scissors":
         if computer_action == "paper":
-            print('Ножницы режут бумагу! Вы победили!')
+            print('Scissors cut paper! You win!')
         else:
-            print('Камень бьет ножницы! Вы проиграли.')
+            print('Rock beats scissors! You lose.')
     elif user_action == "paper":
         if computer_action == "rock":
-            print('Бумага оборачивает камень! Вы победили!')
+            print('Paper wraps around a rock! You win!')
         else:
-            print('Ножницы режут бумагу! Вы проиграли.')
+            print('Scissors cut paper! You lost.')
     elif user_action == "rock":
         if computer_action == "scissors":
-            print('Камень бьет ножницы! Вы победили!')
+            print('Rock beats scissors! You win!')
         else:
-            print('Бумага оборачивает камень! вы проиграли.')
+            print('The paper wraps around the rock! You lose.')
 
 
 while True:
     user_action = str(input(f"Input your selection:{options}")).lower()
 
     if user_action in options:
-
+        Zalupa =""
         computer_action = get_computer_selection()
-        print(f'\nВы выбрали {user_action}, Компьютер выбрал {computer_action}.\n')
+        print(f'\nYou chose {user_action}, The computer has chosen {computer_action}.\n')
         determins_winner(user_action, computer_action)
     else:
         print("IDI NAHUI")
